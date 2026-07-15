@@ -127,10 +127,8 @@ button:hover{
 /* Card */
 
 #card{
-
     width:420px;
-    aspect-ratio:1/1;
-
+    height:525px;
     border-radius:25px;
 
     overflow:hidden;
