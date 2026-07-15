@@ -411,182 +411,88 @@ CARD
 ========================= */
 
 .donor-label{
-
     position:absolute;
-
-    top:365px;
-
+    top:355px;
     width:100%;
-
     text-align:center;
-
-    color:#ffffff;
-
+    color:#fff;
     font-size:18px;
-
-    font-weight:500;
-
     z-index:10;
-
 }
 
 #previewName{
-
     position:absolute;
-
-    top:392px;
-
+    top:385px;
     width:100%;
-
     text-align:center;
-
     color:#FFD700;
-
-    font-size:28px;
-
-    font-weight:700;
-
+    font-size:22px;
+    font-weight:bold;
     z-index:10;
-
-    text-shadow:2px 2px 5px rgba(0,0,0,.4);
-
 }
 
 .amount-title{
-
     position:absolute;
-
-    top:430px;
-
+    top:425px;
     width:100%;
-
     text-align:center;
-
-    color:#ffffff;
-
+    color:#fff;
     font-size:16px;
-
     z-index:10;
-
 }
 
 #previewAmount{
-
     position:absolute;
-
-    top:452px;
-
+    top:450px;
     width:100%;
-
     text-align:center;
-
-    color:#ffffff;
-
+    color:#fff;
     font-size:34px;
-
-    font-weight:700;
-
+    font-weight:bold;
     z-index:10;
-
 }
 
 #amountWords{
-
     position:absolute;
-
-    top:495px;
-
+    top:490px;
     width:100%;
-
     text-align:center;
-
     color:#FFE082;
-
     font-size:16px;
-
-    font-weight:600;
-
     z-index:10;
-
 }
-/* =========================
-   THANK YOU MESSAGE
-========================= */
 
 .thanks{
-
     position:absolute;
-
-    left:25px;
-
-    right:25px;
-
-    bottom:75px;
-
+    bottom:70px;
+    width:100%;
     text-align:center;
-
-    color:#ffffff;
-
-    font-size:16px;
-
-    line-height:1.6;
-
-    font-weight:500;
-
+    color:#fff;
+    font-size:15px;
+    line-height:1.5;
     z-index:10;
-
-    text-shadow:1px 1px 3px rgba(0,0,0,.5);
-
 }
-
-/* =========================
-      DATE
-========================= */
 
 #todayDate{
-
     position:absolute;
-
     bottom:42px;
-
     width:100%;
-
     text-align:center;
-
     color:#FFD700;
-
     font-size:16px;
-
-    font-weight:700;
-
+    font-weight:bold;
     z-index:10;
-
 }
 
-/* =========================
-      MOBILE NUMBER
-========================= */
-
 .phones{
-
     position:absolute;
-
     bottom:12px;
-
     width:100%;
-
     text-align:center;
-
-    color:#ffffff;
-
+    color:#fff;
     font-size:14px;
-
-    line-height:1.6;
-
-    font-weight:600;
-
+    line-height:1.4;
     z-index:10;
-
 }
 
 /* =========================
