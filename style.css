@@ -303,82 +303,31 @@ button:hover{
 ========================== */
 
 .donor-label{
-    position:absolute;
-    top:380px;
-    width:100%;
-    text-align:center;
-    color:#ffffff;
-    font-size:20px;
-    font-weight:500;
-    z-index:5;
+    top:340px;
 }
 
 #previewName{
-    position:absolute;
-    top:412px;
-    width:100%;
-    text-align:center;
-    color:#FFD700;
-    font-size:30px;
-    font-weight:700;
-    z-index:5;
-    text-shadow:2px 2px 6px rgba(0,0,0,.4);
+    top:375px;
 }
 
 #previewAmount{
-    position:absolute;
-    top:458px;
-    width:100%;
-    text-align:center;
-    color:#ffffff;
-    font-size:42px;
-    font-weight:700;
-    z-index:5;
+    top:425px;
 }
 
 #amountWords{
-    position:absolute;
-    top:515px;
-    width:100%;
-    text-align:center;
-    color:#FFF3C4;
-    font-size:18px;
-    font-weight:600;
-    z-index:5;
+    top:480px;
 }
 
 .thanks{
-    position:absolute;
-    left:30px;
-    right:30px;
-    bottom:90px;
-    text-align:center;
-    color:#ffffff;
-    font-size:18px;
-    line-height:1.6;
-    z-index:5;
+    bottom:95px;
 }
 
 #todayDate{
-    position:absolute;
-    bottom:55px;
-    width:100%;
-    text-align:center;
-    color:#FFD700;
-    font-size:17px;
-    font-weight:600;
-    z-index:5;
+    bottom:58px;
 }
 
 .phones{
-    position:absolute;
     bottom:18px;
-    width:100%;
-    text-align:center;
-    color:#ffffff;
-    font-size:15px;
-    line-height:1.5;
-    z-index:5;
 }
 
 /* Mobile */
