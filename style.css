@@ -314,9 +314,9 @@ CARD
 
 .card-logo{
 
-    width:78%;
+    width:72%;
 
-    height:78%;
+    height:72%;
 
     object-fit:contain;
 
@@ -403,6 +403,7 @@ CARD
     height:100%;
 
     object-fit:cover;
+    display:block;
 
 }
 
