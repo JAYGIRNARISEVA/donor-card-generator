@@ -127,11 +127,29 @@ const downloadBtn = document.getElementById("downloadBtn");
 
 downloadBtn.addEventListener("click", () => {
 
-    html2canvas(document.getElementById("card"), {
-        scale: 4,
+    downloadBtn.addEventListener("click", async () => {
+
+    const card = document.getElementById("card");
+
+    const canvas = await html2canvas(card, {
+        scale: window.devicePixelRatio * 3,
         useCORS: true,
-        allowTaint: true,
-        backgroundColor: null
+        allowTaint: false,
+        backgroundColor: "#ffffff",
+        logging: false,
+        imageTimeout: 0,
+        width: card.offsetWidth,
+        height: card.offsetHeight,
+        scrollX: 0,
+        scrollY: 0
+    });
+
+    const link = document.createElement("a");
+    link.download = "donor-card.png";
+    link.href = canvas.toDataURL("image/png", 1.0);
+    link.click();
+
+});
     }).then(canvas => {
 
         const link = document.createElement("a");
@@ -155,12 +173,16 @@ const shareBtn = document.getElementById("shareBtn");
 
 shareBtn.addEventListener("click", async () => {
 
-    const canvas = await html2canvas(document.getElementById("card"), {
-        scale:4,
-        useCORS:true,
-        allowTaint:true,
-        backgroundColor:null
-    });
+const canvas = await html2canvas(card,{
+    scale: window.devicePixelRatio * 3,
+    useCORS:true,
+    allowTaint:false,
+    backgroundColor:"#ffffff",
+    logging:false,
+    imageTimeout:0,
+    width:card.offsetWidth,
+    height:card.offsetHeight
+});
 
     canvas.toBlob(async(blob)=>{
 
