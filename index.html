@@ -2,15 +2,17 @@
 <html lang="gu">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>જય ગીરનારી સેવા મંડળ | Donor Card Generator</title>
 
-<title>જય ગીરનારી સેવા મંડળ</title>
+  <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -18,122 +20,181 @@
 
 <div class="container">
 
-<div class="left-panel">
+    <!-- LEFT PANEL -->
 
-<img src="logo.png" class="logo">
+    <div class="left-panel">
 
-<h1>જય ગીરનારી સેવા મંડળ</h1>
+        <img src="logo.png" class="logo">
 
-<p>Donor Card Generator</p>
+        <h1>જય ગીરનારી સેવા મંડળ</h1>
 
-<label>દાતાનું નામ</label>
+        <p class="subtitle">
+            Donor Card Generator
+        </p>
 
-<input
-type="text"
-id="name"
-placeholder="દાતાનું નામ લખો">
+        <label>
+            દાતાનું નામ
+        </label>
 
-<label>દાનની રકમ</label>
+        <input
+        id="donorNameInput"
+        type="text"
+        placeholder="દાતાનું પૂરું નામ">
 
-<input
-type="number"
-id="amount"
-placeholder="જેમ કે 11000">
+        <label>
 
-<label>ફોટો અપલોડ કરો</label>
+            દાનની રકમ
 
-<input
-type="file"
-id="photo"
-accept="image/*">
+        </label>
 
-<button id="generate">
+        <input
+        id="amountInput"
+        type="number"
+        placeholder="ઉદાહરણ : 11000">
 
-કાર્ડ બનાવો
+        <label>
 
-</button>
+            ફોટો અપલોડ કરો
 
-<button id="download">
+        </label>
 
-HD Download
+        <label class="upload-box">
 
-</button>
+            <input
+            id="photoInput"
+            type="file"
+            accept="image/*"
+            hidden>
 
-<button id="share">
+            <div class="upload-icon">
 
-WhatsApp Share
+                📷
 
-</button>
+            </div>
 
-</div>
+            <div>
 
-<div class="right-panel">
+                ફોટો પસંદ કરો
 
-<div id="card">
+            </div>
 
-<img src="background.jpeg" class="bg">
+        </label>
 
-<div class="overlay"></div>
+        <button id="generateBtn">
 
-<img src="logo.png" class="card-logo">
+            ✨ સન્માન કાર્ડ બનાવો
 
-<div class="ngo">
+        </button>
 
-જય ગીરનારી સેવા મંડળ
+        <button id="downloadBtn">
 
-</div>
+            ⬇ HD Download
 
-<div class="city">
+        </button>
 
-સુરત
+        <button id="shareBtn">
 
-</div>
+            WhatsApp Share
 
-<img id="previewPhoto">
+        </button>
 
-<div class="donor-title">
+    </div>
 
-દાતા શ્રી,
+    <!-- RIGHT PANEL -->
 
-</div>
+    <div class="right-panel">
 
-<div id="previewName">
+        <div id="card">
 
-દાતાનું નામ
+            <img src="background.jpeg" class="background">
 
-</div>
+            <div class="overlay"></div>
 
-<div id="previewAmount">
+            <div class="gold-border"></div>
 
-₹૦/-
+            <div class="logo-circle">
 
-</div>
+                <img
+                src="logo.png"
+                class="card-logo">
 
-<div class="thanks">
+            </div>
 
-🙏 સેવા પરમો ધર્મ: આપના સહકાર બદલ આભાર. 🙏
+            <div class="ngo-name">
 
-</div>
+                જય ગીરનારી સેવા મંડળ
 
-<div class="footer">
+            </div>
 
-<div>
+            <div class="ngo-city">
 
-📞 ૯૯૨૫૭૭૨૧૭૧
+                સુરત
 
-</div>
+            </div>
 
-<div>
+            <div class="photo-ring">
 
-📞 ૭૮૭૪૧૨૧૯૦૩
+                <img
+                id="previewPhoto">
 
-</div>
+            </div>
 
-</div>
+            <div class="donor-label">
 
-</div>
+                દાતા શ્રી,
 
-</div>
+            </div>
+
+            <div
+            id="previewName">
+
+                દાતાનું નામ
+
+            </div>
+
+            <div
+            id="previewAmount">
+
+                ₹૦/-
+
+            </div>
+
+            <div
+            id="amountWords">
+
+                શૂન્ય રૂપિયા પૂરા
+
+            </div>
+
+            <div class="thanks">
+
+                સેવા પરમો ધર્મ:
+                <br>
+
+                આપના સહકાર બદલ આભાર.
+
+            </div>
+
+            <div
+            id="todayDate">
+
+                તા. --/--/----
+
+            </div>
+
+            <div class="phones">
+
+                📞 ૯૯૨૫૭૭૨૧૭૧
+
+                <br>
+
+                📞 ૭૮૭૪૧૨૧૯૦૩
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
