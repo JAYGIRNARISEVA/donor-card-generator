@@ -1,159 +1,142 @@
-// =====================================
+// ==========================================
 // JAY GIRNARI SEVA MANDAL
-// DONOR CARD GENERATOR
-// Part 1
-// =====================================
+// DONOR CARD GENERATOR V2
+// ==========================================
 
 // Inputs
 const donorName = document.getElementById("donorName");
 const donationAmount = document.getElementById("donationAmount");
 const photoInput = document.getElementById("photoInput");
 
-// Preview Elements
+// Preview
 const previewName = document.getElementById("previewName");
 const previewAmount = document.getElementById("previewAmount");
 const previewPhoto = document.getElementById("previewPhoto");
 const amountWords = document.getElementById("amountWords");
 const todayDate = document.getElementById("todayDate");
 
-// -------------------------
-// Today's Date
-// -------------------------
+// =========================
+// TODAY DATE
+// =========================
 
-function loadTodayDate(){
+function loadDate(){
 
-    const today = new Date();
+const d=new Date();
 
-    const day = String(today.getDate()).padStart(2,"0");
-    const month = String(today.getMonth()+1).padStart(2,"0");
-    const year = today.getFullYear();
+const day=String(d.getDate()).padStart(2,"0");
+const month=String(d.getMonth()+1).padStart(2,"0");
+const year=d.getFullYear();
 
-    todayDate.innerHTML = "તા. " + day + "-" + month + "-" + year;
+todayDate.innerHTML="તા. "+day+"-"+month+"-"+year;
 
 }
 
-loadTodayDate();
+loadDate();
 
+// =========================
+// DONOR NAME
+// =========================
 
-// -------------------------
-// Live Name Preview
-// -------------------------
+donorName.addEventListener("input",function(){
 
-donorName.addEventListener("input",()=>{
+if(this.value.trim()==""){
 
-    if(donorName.value.trim()==""){
+previewName.innerHTML="દાતાનું નામ";
 
-        previewName.innerHTML="દાતાનું નામ";
+}else{
 
-    }
+previewName.innerHTML=this.value;
 
-    else{
-
-        previewName.innerHTML=donorName.value;
-
-    }
+}
 
 });
 
+// =========================
+// DONATION AMOUNT
+// =========================
 
-// -------------------------
-// Live Amount Preview
-// -------------------------
+donationAmount.addEventListener("input",function(){
 
-donationAmount.addEventListener("input",()=>{
+let amount=parseInt(this.value);
 
-    let amount=parseInt(donationAmount.value);
+if(isNaN(amount)){
 
-    if(isNaN(amount)){
+previewAmount.innerHTML="₹ ૦/-";
+amountWords.innerHTML="શૂન્ય રૂપિયા પૂરા";
 
-        previewAmount.innerHTML="₹ ૦/-";
-        amountWords.innerHTML="શૂન્ય રૂપિયા પૂરા";
-        return;
+return;
 
-    }
+}
 
-    previewAmount.innerHTML="₹ "+amount.toLocaleString('en-IN')+"/-";
+previewAmount.innerHTML="₹ "+amount.toLocaleString("en-IN")+"/-";
 
-});
-// =====================================
-// Photo Upload Preview
-// =====================================
+const map={
 
-photoInput.addEventListener("change", function () {
+100:"એકસો રૂપિયા પૂરા",
 
-    const file = this.files[0];
+500:"પાંચસો રૂપિયા પૂરા",
 
-    if (!file) return;
+1000:"એક હજાર રૂપિયા પૂરા",
 
-    const reader = new FileReader();
+1100:"એક હજાર એકસો રૂપિયા પૂરા",
 
-    reader.onload = function (e) {
+2100:"બે હજાર એકસો રૂપિયા પૂરા",
 
-        previewPhoto.src = e.target.result;
+5100:"પાંચ હજાર એકસો રૂપિયા પૂરા",
 
-    };
+11000:"અગિયાર હજાર રૂપિયા પૂરા",
 
-    reader.readAsDataURL(file);
+21000:"એકવીસ હજાર રૂપિયા પૂરા",
 
-});
+51000:"એકાવન હજાર રૂપિયા પૂરા",
 
+101000:"એક લાખ એક હજાર રૂપિયા પૂરા"
 
-// =====================================
-// Amount In Gujarati Words
-// (Basic Version)
-// =====================================
-
-const amountMap = {
-    0: "શૂન્ય રૂપિયા પૂરા",
-    100: "એકસો રૂપિયા પૂરા",
-    500: "પાંચસો રૂપિયા પૂરા",
-    1000: "એક હજાર રૂપિયા પૂરા",
-    1100: "એક હજાર એકસો રૂપિયા પૂરા",
-    2100: "બે હજાર એકસો રૂપિયા પૂરા",
-    5100: "પાંચ હજાર એકસો રૂપિયા પૂરા",
-    11000: "અગિયાર હજાર રૂપિયા પૂરા",
-    21000: "એકવીસ હજાર રૂપિયા પૂરા",
-    51000: "એકાવન હજાર રૂપિયા પૂરા",
-    101000: "એક લાખ એક હજાર રૂપિયા પૂરા"
 };
 
-donationAmount.addEventListener("input", () => {
-
-    const amount = parseInt(donationAmount.value);
-
-    if (isNaN(amount)) {
-        amountWords.innerHTML = "શૂન્ય રૂપિયા પૂરા";
-        return;
-    }
-
-    if (amountMap[amount]) {
-
-        amountWords.innerHTML = amountMap[amount];
-
-    } else {
-
-        amountWords.innerHTML = amount.toLocaleString('en-IN') + " રૂપિયા પૂરા";
-
-    }
+amountWords.innerHTML=map[amount] || amount.toLocaleString("en-IN")+" રૂપિયા પૂરા";
 
 });
-// =====================================
+
+// =========================
+// PHOTO UPLOAD
+// =========================
+
+photoInput.addEventListener("change",function(){
+
+const file=this.files[0];
+
+if(!file) return;
+
+const reader=new FileReader();
+
+reader.onload=function(e){
+
+previewPhoto.src=e.target.result;
+
+};
+
+reader.readAsDataURL(file);
+
+});
+// ==========================================
 // HD DOWNLOAD
-// =====================================
+// ==========================================
 
 const downloadBtn = document.getElementById("downloadBtn");
 
 downloadBtn.addEventListener("click", () => {
 
-    html2canvas(document.querySelector("#card"), {
+    html2canvas(document.getElementById("card"), {
         scale: 4,
         useCORS: true,
+        allowTaint: true,
         backgroundColor: null
     }).then(canvas => {
 
         const link = document.createElement("a");
 
-        link.download = "Jay-Girnari-Donor-Card.png";
+        link.download = "donor-card.png";
 
         link.href = canvas.toDataURL("image/png");
 
@@ -164,39 +147,44 @@ downloadBtn.addEventListener("click", () => {
 });
 
 
-// =====================================
+// ==========================================
 // WHATSAPP SHARE
-// =====================================
+// ==========================================
 
 const shareBtn = document.getElementById("shareBtn");
 
 shareBtn.addEventListener("click", async () => {
 
-    const canvas = await html2canvas(document.querySelector("#card"), {
-        scale: 4,
-        useCORS: true,
-        backgroundColor: null
+    const canvas = await html2canvas(document.getElementById("card"), {
+        scale:4,
+        useCORS:true,
+        allowTaint:true,
+        backgroundColor:null
     });
 
-    canvas.toBlob(async (blob) => {
+    canvas.toBlob(async(blob)=>{
 
-        const file = new File(
+        const file=new File(
             [blob],
-            "Jay-Girnari-Donor-Card.png",
-            { type: "image/png" }
+            "donor-card.png",
+            {type:"image/png"}
         );
 
-        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        if(navigator.canShare && navigator.canShare({files:[file]})){
 
-            await navigator.share({
-                title: "જય ગીરનારી સેવા મંડળ",
-                text: "સેવા પરમો ધર્મ: આપના સહકાર બદલ આભાર.",
-                files: [file]
+            navigator.share({
+
+                title:"જય ગીરનારી સેવા મંડળ",
+
+                text:"સેવા પરમો ધર્મ: આપના સહકાર બદલ આભાર.",
+
+                files:[file]
+
             });
 
-        } else {
+        }else{
 
-            alert("તમારા બ્રાઉઝરમાં સીધું WhatsApp Share ઉપલબ્ધ નથી. કૃપા કરીને HD Download કરીને WhatsApp માં મોકલો.");
+            alert("આ Browser માં સીધું Share ઉપલબ્ધ નથી. પહેલા Download કરો.");
 
         }
 
@@ -205,8 +193,40 @@ shareBtn.addEventListener("click", async () => {
 });
 
 
-// =====================================
-// DEFAULT PHOTO
-// =====================================
+// ==========================================
+// DEFAULT VALUES
+// ==========================================
 
-previewPhoto.src = "logo.png";
+window.addEventListener("load",()=>{
+
+    previewName.innerHTML="દાતાનું નામ";
+
+    previewAmount.innerHTML="₹ ૦/-";
+
+    amountWords.innerHTML="શૂન્ય રૂપિયા પૂરા";
+
+});
+
+
+// ==========================================
+// LIVE UPDATE
+// ==========================================
+
+donorName.dispatchEvent(new Event("input"));
+donationAmount.dispatchEvent(new Event("input"));
+
+
+// ==========================================
+// PREVENT IMAGE DRAG
+// ==========================================
+
+document.querySelectorAll("img").forEach(img=>{
+
+    img.setAttribute("draggable","false");
+
+});
+
+
+// ==========================================
+// END
+// ==========================================
