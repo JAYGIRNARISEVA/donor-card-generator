@@ -1,7 +1,7 @@
-/* =====================================
+/* =========================================
    JAY GIRNARI SEVA MANDAL
-   DONOR CARD GENERATOR
-===================================== */
+   DONOR CARD GENERATOR V2
+========================================= */
 
 *{
     margin:0;
@@ -12,11 +12,11 @@
 :root{
 
     --gold:#D4AF37;
-    --gold-light:#F8E7A1;
+    --gold2:#FFE082;
     --green:#198754;
-    --blue:#0D6EFD;
-    --whatsapp:#25D366;
-    --white:#ffffff;
+    --blue:#0d6efd;
+    --white:#fff;
+    --dark:#222;
 
 }
 
@@ -24,13 +24,9 @@ body{
 
     font-family:'Noto Sans Gujarati',sans-serif;
 
-    background:#edf2f7;
+    background:#eef2f7;
 
 }
-
-/* ==========================
-        LAYOUT
-========================== */
 
 .container{
 
@@ -40,21 +36,21 @@ body{
 
 }
 
-/* ==========================
-      LEFT PANEL
-========================== */
+/* =========================
+LEFT PANEL
+========================= */
 
 .left-panel{
 
-    width:360px;
+    width:370px;
 
-    background:#ffffff;
+    background:#fff;
 
     padding:30px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.10);
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
 
-    z-index:10;
+    z-index:20;
 
 }
 
@@ -70,13 +66,13 @@ body{
 
 .left-panel h1{
 
+    margin-top:15px;
+
     text-align:center;
 
     color:#166534;
 
     font-size:28px;
-
-    margin-top:15px;
 
 }
 
@@ -84,7 +80,7 @@ body{
 
     text-align:center;
 
-    color:#666;
+    color:#777;
 
     margin:10px 0 30px;
 
@@ -92,7 +88,7 @@ body{
 
 .form-group{
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 
 }
 
@@ -113,92 +109,65 @@ input[type=number]{
 
     padding:14px;
 
-    border:1px solid #d9d9d9;
-
     border-radius:12px;
+
+    border:1px solid #ddd;
 
     font-size:16px;
 
     outline:none;
 
-    transition:.30s;
+    transition:.25s;
 
 }
 
-input[type=text]:focus,
-input[type=number]:focus{
+input:focus{
 
     border-color:var(--gold);
 
-    box-shadow:0 0 8px rgba(212,175,55,.35);
-
 }
-
-/* Upload Box */
 
 .upload-box{
 
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
     border:2px dashed var(--gold);
 
-    border-radius:15px;
+    border-radius:14px;
 
-    padding:28px;
+    text-align:center;
+
+    padding:25px;
 
     cursor:pointer;
 
-    transition:.30s;
-
 }
 
-.upload-box:hover{
+.uploadLabel{
 
-    background:#fffdf4;
+    cursor:pointer;
 
-}
+    display:block;
 
-.upload-icon{
-
-    font-size:42px;
-
-    margin-bottom:12px;
+    font-size:20px;
 
 }
-
-/* Buttons */
 
 button{
 
     width:100%;
 
+    margin-top:15px;
+
+    padding:15px;
+
     border:none;
 
     border-radius:12px;
-
-    padding:15px;
 
     color:white;
 
     font-size:17px;
 
     cursor:pointer;
-
-    margin-top:15px;
-
-    transition:.30s;
-
-}
-
-button:hover{
-
-    transform:translateY(-2px);
 
 }
 
@@ -210,13 +179,13 @@ button:hover{
 
 #shareBtn{
 
-    background:var(--whatsapp);
+    background:#25D366;
 
 }
 
-/* ==========================
-      RIGHT PANEL
-========================== */
+/* =========================
+RIGHT PANEL
+========================= */
 
 .right-panel{
 
@@ -230,32 +199,29 @@ button:hover{
 
     padding:40px;
 
-    background:#eef2f7;
-
 }
-/* =====================================
-            DONOR CARD
-===================================== */
+
+/* =========================
+CARD
+========================= */
 
 #card{
-
-    position:relative;
 
     width:420px;
 
     height:525px;
 
+    position:relative;
+
     overflow:hidden;
 
-    border-radius:24px;
+    border-radius:22px;
 
-    background:#ffffff;
+    background:#fff;
 
-    box-shadow:0 20px 45px rgba(0,0,0,.25);
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
 
 }
-
-/* Background */
 
 .background{
 
@@ -271,22 +237,15 @@ button:hover{
 
 }
 
-/* Dark Overlay */
-
 .overlay{
 
     position:absolute;
 
     inset:0;
 
-    background:linear-gradient(
-        rgba(0,0,0,.20),
-        rgba(0,0,0,.55)
-    );
+    background:linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.60));
 
 }
-
-/* Double Gold Border */
 
 .gold-border{
 
@@ -310,21 +269,20 @@ button:hover{
 
     inset:8px;
 
-    border:1.5px solid var(--gold-light);
+    border:1.5px solid var(--gold2);
 
     border-radius:10px;
 
 }
-
-/* ======================
+/* =========================
         NGO LOGO
-====================== */
+========================= */
 
 .logo-circle{
 
     position:absolute;
 
-    top:20px;
+    top:22px;
 
     left:50%;
 
@@ -334,11 +292,11 @@ button:hover{
 
     height:100px;
 
-    background:#ffffff;
-
-    border:4px solid var(--gold);
+    background:#fff;
 
     border-radius:50%;
+
+    border:4px solid var(--gold);
 
     display:flex;
 
@@ -346,7 +304,11 @@ button:hover{
 
     align-items:center;
 
-    z-index:5;
+    overflow:hidden;
+
+    z-index:10;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.20);
 
 }
 
@@ -360,27 +322,29 @@ button:hover{
 
 }
 
-/* ======================
-      NGO NAME
-====================== */
+/* =========================
+        NGO NAME
+========================= */
 
 .ngo-name{
 
     position:absolute;
 
-    top:130px;
+    top:132px;
 
     width:100%;
 
     text-align:center;
 
-    color:#ffffff;
+    color:#fff;
 
-    font-size:27px;
+    font-size:28px;
 
     font-weight:700;
 
-    z-index:5;
+    z-index:10;
+
+    text-shadow:2px 2px 5px rgba(0,0,0,.4);
 
 }
 
@@ -388,29 +352,29 @@ button:hover{
 
     position:absolute;
 
-    top:165px;
+    top:168px;
 
     width:100%;
 
     text-align:center;
 
-    color:#FFD54F;
+    color:#FFE082;
 
     font-size:18px;
 
-    z-index:5;
+    z-index:10;
 
 }
 
-/* ======================
+/* =========================
       DONOR PHOTO
-====================== */
+========================= */
 
 .photo-ring{
 
     position:absolute;
 
-    top:200px;
+    top:205px;
 
     left:50%;
 
@@ -422,26 +386,35 @@ button:hover{
 
     border-radius:50%;
 
-    background:var(--gold);
+    border:5px solid var(--gold);
 
-    padding:5px;
+    overflow:hidden;
 
-    z-index:5;
+    background:#fff;
+
+    z-index:10;
 
 }
 
 .photo-ring img{
 
     width:100%;
-    /* =====================================
-          CARD CONTENT
-===================================== */
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* =========================
+      DONOR DETAILS
+========================= */
 
 .donor-label{
 
     position:absolute;
 
-    top:360px;
+    top:365px;
 
     width:100%;
 
@@ -449,11 +422,11 @@ button:hover{
 
     color:#ffffff;
 
-    font-size:20px;
+    font-size:18px;
 
     font-weight:500;
 
-    z-index:5;
+    z-index:10;
 
 }
 
@@ -461,7 +434,7 @@ button:hover{
 
     position:absolute;
 
-    top:390px;
+    top:392px;
 
     width:100%;
 
@@ -469,21 +442,21 @@ button:hover{
 
     color:#FFD700;
 
-    font-size:30px;
+    font-size:28px;
 
     font-weight:700;
 
-    text-shadow:2px 2px 6px rgba(0,0,0,.35);
+    z-index:10;
 
-    z-index:5;
+    text-shadow:2px 2px 5px rgba(0,0,0,.4);
 
 }
 
-#previewAmount{
+.amount-title{
 
     position:absolute;
 
-    top:435px;
+    top:430px;
 
     width:100%;
 
@@ -491,11 +464,29 @@ button:hover{
 
     color:#ffffff;
 
-    font-size:38px;
+    font-size:16px;
+
+    z-index:10;
+
+}
+
+#previewAmount{
+
+    position:absolute;
+
+    top:452px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#ffffff;
+
+    font-size:34px;
 
     font-weight:700;
 
-    z-index:5;
+    z-index:10;
 
 }
 
@@ -503,21 +494,24 @@ button:hover{
 
     position:absolute;
 
-    top:480px;
+    top:495px;
 
     width:100%;
 
     text-align:center;
 
-    color:#FFE9A8;
+    color:#FFE082;
 
-    font-size:17px;
+    font-size:16px;
 
     font-weight:600;
 
-    z-index:5;
+    z-index:10;
 
 }
+/* =========================
+   THANK YOU MESSAGE
+========================= */
 
 .thanks{
 
@@ -537,9 +531,17 @@ button:hover{
 
     line-height:1.6;
 
-    z-index:5;
+    font-weight:500;
+
+    z-index:10;
+
+    text-shadow:1px 1px 3px rgba(0,0,0,.5);
 
 }
+
+/* =========================
+      DATE
+========================= */
 
 #todayDate{
 
@@ -551,15 +553,19 @@ button:hover{
 
     text-align:center;
 
-    color:#FFD54F;
+    color:#FFD700;
 
     font-size:16px;
 
-    font-weight:600;
+    font-weight:700;
 
-    z-index:5;
+    z-index:10;
 
 }
+
+/* =========================
+      MOBILE NUMBER
+========================= */
 
 .phones{
 
@@ -573,19 +579,39 @@ button:hover{
 
     color:#ffffff;
 
-    font-size:15px;
+    font-size:14px;
 
-    line-height:1.5;
+    line-height:1.6;
 
-    z-index:5;
+    font-weight:600;
+
+    z-index:10;
 
 }
 
-/* =====================================
-        MOBILE RESPONSIVE
-===================================== */
+/* =========================
+      BUTTON EFFECT
+========================= */
 
-@media(max-width:900px){
+button{
+
+    transition:.3s ease;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+      MOBILE VIEW
+========================= */
+
+@media (max-width:900px){
 
 .container{
 
@@ -597,11 +623,13 @@ button:hover{
 
     width:100%;
 
+    box-shadow:none;
+
 }
 
 .right-panel{
 
-    padding:25px;
+    padding:20px;
 
 }
 
@@ -609,7 +637,7 @@ button:hover{
 
     width:360px;
 
-    height:450px;
+    height:460px;
 
 }
 
@@ -623,7 +651,15 @@ button:hover{
 
 .ngo-name{
 
-    font-size:24px;
+    font-size:23px;
+
+    top:118px;
+
+}
+
+.ngo-city{
+
+    top:148px;
 
 }
 
@@ -633,54 +669,68 @@ button:hover{
 
     height:120px;
 
-    top:175px;
+    top:180px;
 
 }
 
 .donor-label{
 
-    top:310px;
+    top:315px;
 
 }
 
 #previewName{
 
-    top:338px;
+    top:340px;
 
     font-size:24px;
 
 }
 
-#previewAmount{
+.amount-title{
 
     top:375px;
 
-    font-size:30px;
+}
+
+#previewAmount{
+
+    top:395px;
+
+    font-size:28px;
 
 }
 
 #amountWords{
 
-    top:412px;
-
-    font-size:15px;
-
-}
-
-.thanks{
+    top:430px;
 
     font-size:14px;
 
 }
 
+.thanks{
+
+    bottom:62px;
+
+    font-size:13px;
+
 }
 
-    height:100%;
+#todayDate{
 
-    border-radius:50%;
+    bottom:34px;
 
-    object-fit:cover;
+    font-size:14px;
 
-    background:#ffffff;
+}
+
+.phones{
+
+    bottom:8px;
+
+    font-size:12px;
+
+}
 
 }
