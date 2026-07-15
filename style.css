@@ -300,3 +300,107 @@ button:hover{
     object-fit:cover;
 
 }
+/* ==========================
+   CARD CONTENT
+========================== */
+
+.donor-label{
+    position:absolute;
+    top:380px;
+    width:100%;
+    text-align:center;
+    color:#ffffff;
+    font-size:20px;
+    font-weight:500;
+    z-index:5;
+}
+
+#previewName{
+    position:absolute;
+    top:412px;
+    width:100%;
+    text-align:center;
+    color:#FFD700;
+    font-size:30px;
+    font-weight:700;
+    z-index:5;
+    text-shadow:2px 2px 6px rgba(0,0,0,.4);
+}
+
+#previewAmount{
+    position:absolute;
+    top:458px;
+    width:100%;
+    text-align:center;
+    color:#ffffff;
+    font-size:42px;
+    font-weight:700;
+    z-index:5;
+}
+
+#amountWords{
+    position:absolute;
+    top:515px;
+    width:100%;
+    text-align:center;
+    color:#FFF3C4;
+    font-size:18px;
+    font-weight:600;
+    z-index:5;
+}
+
+.thanks{
+    position:absolute;
+    left:30px;
+    right:30px;
+    bottom:90px;
+    text-align:center;
+    color:#ffffff;
+    font-size:18px;
+    line-height:1.6;
+    z-index:5;
+}
+
+#todayDate{
+    position:absolute;
+    bottom:55px;
+    width:100%;
+    text-align:center;
+    color:#FFD700;
+    font-size:17px;
+    font-weight:600;
+    z-index:5;
+}
+
+.phones{
+    position:absolute;
+    bottom:18px;
+    width:100%;
+    text-align:center;
+    color:#ffffff;
+    font-size:15px;
+    line-height:1.5;
+    z-index:5;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.container{
+    flex-direction:column;
+}
+
+.left-panel{
+    width:100%;
+}
+
+.right-panel{
+    padding:20px;
+}
+
+#card{
+    width:360px;
+}
+
+}
