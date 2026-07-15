@@ -374,15 +374,15 @@ CARD
 
     position:absolute;
 
-    top:205px;
+    top:185px;
 
     left:50%;
 
     transform:translateX(-50%);
 
-    width:145px;
+    width:140px;
 
-    height:145px;
+    height:140px;
 
     border-radius:50%;
 
@@ -412,7 +412,7 @@ CARD
 
 .donor-label{
     position:absolute;
-    top:355px;
+    top:350px;
     width:100%;
     text-align:center;
     color:#fff;
@@ -422,18 +422,18 @@ CARD
 
 #previewName{
     position:absolute;
-    top:385px;
+    top:365px;
     width:100%;
     text-align:center;
     color:#FFD700;
-    font-size:22px;
+    font-size:26px;
     font-weight:bold;
     z-index:10;
 }
 
 .amount-title{
     position:absolute;
-    top:425px;
+    top:405px;
     width:100%;
     text-align:center;
     color:#fff;
@@ -443,18 +443,18 @@ CARD
 
 #previewAmount{
     position:absolute;
-    top:450px;
+    top:430px;
     width:100%;
     text-align:center;
     color:#fff;
-    font-size:34px;
+    font-size:32px;
     font-weight:bold;
     z-index:10;
 }
 
 #amountWords{
     position:absolute;
-    top:490px;
+    top:475px;
     width:100%;
     text-align:center;
     color:#FFE082;
@@ -464,7 +464,7 @@ CARD
 
 .thanks{
     position:absolute;
-    bottom:70px;
+    bottom:95px;
     width:100%;
     text-align:center;
     color:#fff;
@@ -475,7 +475,7 @@ CARD
 
 #todayDate{
     position:absolute;
-    bottom:42px;
+    bottom:55px;
     width:100%;
     text-align:center;
     color:#FFD700;
@@ -486,7 +486,7 @@ CARD
 
 .phones{
     position:absolute;
-    bottom:12px;
+    bottom:15px;
     width:100%;
     text-align:center;
     color:#fff;
