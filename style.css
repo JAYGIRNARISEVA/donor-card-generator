@@ -180,43 +180,14 @@ button:hover{
 /* Logo */
 
 .logo-circle{
-
-    position:absolute;
-
-    top:25px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:95px;
-
-    height:95px;
-
-    background:#fff;
-
-    border-radius:50%;
-
-    border:4px solid #D4AF37;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:5;
-
+    width:105px;
+    height:105px;
 }
 
 .card-logo{
-
-    width:78%;
-
-    height:78%;
-
+    width:80%;
+    height:80%;
     object-fit:contain;
-
 }
 
 /* NGO */
